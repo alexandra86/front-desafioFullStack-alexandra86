@@ -82,7 +82,7 @@ export const LoginPage = () => {
         </button>
       </section>
       <section className="secApresentation">
-        <img src={logo} alt="" />
+        <img src={logo} alt="imagem de costumer contact" />
       </section>
     </StyledLoginPage>
   );

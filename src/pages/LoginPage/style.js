@@ -53,7 +53,7 @@ export const StyledLoginPage = styled.div`
     margin-bottom: 0.9375rem;
     padding: 1.25rem 0.9375rem;
     margin-bottom: 0.3125rem;
-    font-family: "Inter", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-size: 1rem;
     background-color: #d9e8fc;

@@ -35,6 +35,21 @@ export const AuthProvider = ({ children }) => {
     getClient();
   }, []);
 
+  async function NewRegister(data) {
+    try {
+      setLoading(true);
+      const response = await api.post("/clients", data);
+      toast.success("Cadastro relizado com sucesso!");
+      setTimeout(() => {
+        navigate("/");
+      }, 5000);
+    } catch (error) {
+      toast.error("Usuário já cadastrado!");
+    } finally {
+      setLoading(false);
+    }
+  }
+
   const NewLogin = async (data) => {
     try {
       setLoading(true);
@@ -69,6 +84,7 @@ export const AuthProvider = ({ children }) => {
         setClient,
         newLoading,
         setNewLoading,
+        NewRegister,
       }}
     >
       {children}
