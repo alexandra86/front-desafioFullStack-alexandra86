@@ -5,9 +5,10 @@ import { StyledNotFound } from "./style";
 
 export const NotFoundPage = () => {
   const navigate = useNavigate();
-  function goLoginClick() {
+
+  const goLoginClick = () => {
     navigate("/");
-  }
+  };
   return (
     <StyledNotFound>
       <button onClick={goLoginClick} className="btComeBack">

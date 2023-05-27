@@ -11,9 +11,10 @@ export const RegisterPage = () => {
   const { loading, NewRegister } = useContext(AuthContext);
 
   const navigate = useNavigate();
-  function goLoginClick() {
+
+  const goLoginClick = () => {
     navigate("/");
-  }
+  };
 
   const {
     register,
@@ -33,11 +34,11 @@ export const RegisterPage = () => {
     resolver: yupResolver(registerSchema),
   });
 
-  async function submit(data) {
+  const submit = async (data) => {
     const information = { ...data };
     await NewRegister(information);
     reset();
-  }
+  };
   return (
     <StyledRegisterPage>
       <section className="secApresentation">

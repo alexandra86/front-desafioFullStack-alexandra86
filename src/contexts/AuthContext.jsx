@@ -21,9 +21,11 @@ export const AuthProvider = ({ children }) => {
     api.defaults.headers.common["Authorization"] = `Bearer ${tokenValidate}`;
 
     try {
-      const response = await api.get("/clients");
+      const response = await api.get(`/clients`);
 
-      setUser(response.data);
+      console.log(response.data);
+
+      setClient(response.data);
     } catch (error) {
       console.error(error);
     } finally {
