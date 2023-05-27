@@ -1,24 +1,22 @@
 import React from "react";
 import { useContext } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import { StyledHomePage } from "./style";
 
 export const HomePage = () => {
-  const { client, newLoading, setClient } = useContext(AuthContext);
+  const { client, newLoading } = useContext(AuthContext);
   const navigate = useNavigate();
 
   if (newLoading) {
     return null;
   }
-
   const goLoginClick = () => {
     navigate("/");
-    setClient(null);
+    client.client = null;
     localStorage.removeItem("@TOKEN");
     localStorage.removeItem("@TOKENCLIENT");
   };
-
   return (
     <StyledHomePage>
       <header className="headerHome">
@@ -28,10 +26,12 @@ export const HomePage = () => {
         </button>
       </header>
 
-      <div className="areaUser">
-        <h2 className="areaWelcome">Olá, {client.name} </h2>
-        <p className="course">{client.gender}</p>
-      </div>
+      {client?.client && (
+        <div className="areaUser">
+          <h2 className="areaWelcome">Olá, {client.client.name}</h2>
+          <p className="course">{client.client.gender}</p>
+        </div>
+      )}
 
       <div className="areaInformation">
         <div className="areaTechnology">
@@ -40,11 +40,7 @@ export const HomePage = () => {
             +
           </button>
         </div>
-        {/* <ul className="ulCardTech">
-          {constumer.map((elem) => (
-            <CardContact key={elem.id} elem={elem} />
-          ))}
-        </ul> */}
+        <ul className="ulCardTech"></ul>
       </div>
     </StyledHomePage>
   );

@@ -6,51 +6,10 @@ import { api } from "../services/axiosClient";
 export const AuthContext = createContext({});
 
 export const AuthProvider = ({ children }) => {
-  const [loading, setLoading] = useState(false);
   const [client, setClient] = useState(null);
+  const [loading, setLoading] = useState(false);
   const [newLoading, setNewLoading] = useState(true);
   const navigate = useNavigate();
-
-  async function getClient() {
-    const tokenValidate = localStorage.getItem("@TOKEN");
-
-    if (!tokenValidate) {
-      setNewLoading(false);
-      return;
-    }
-    api.defaults.headers.common["Authorization"] = `Bearer ${tokenValidate}`;
-
-    try {
-      const response = await api.get(`/clients`);
-
-      console.log(response.data);
-
-      setClient(response.data);
-    } catch (error) {
-      console.error(error);
-    } finally {
-      setNewLoading(false);
-    }
-  }
-
-  useEffect(() => {
-    getClient();
-  }, []);
-
-  async function NewRegister(data) {
-    try {
-      setLoading(true);
-      const response = await api.post("/clients", data);
-      toast.success("Cadastro relizado com sucesso!");
-      setTimeout(() => {
-        navigate("/");
-      }, 5000);
-    } catch (error) {
-      toast.error("Usuário já cadastrado!");
-    } finally {
-      setLoading(false);
-    }
-  }
 
   const NewLogin = async (data) => {
     try {
@@ -76,6 +35,44 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  const getClient = async () => {
+    const tokenValidate = localStorage.getItem("@TOKEN");
+
+    if (!tokenValidate) {
+      setNewLoading(false);
+      return;
+    }
+    api.defaults.headers.common["Authorization"] = `Bearer ${tokenValidate}`;
+    try {
+      const response = await api.get(`/clients/${tokenValidate}`);
+
+      setClient(response.data);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setNewLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    getClient();
+  }, []);
+
+  const NewRegister = async (data) => {
+    try {
+      setLoading(true);
+      const response = await api.post("/clients", data);
+      toast.success("Cadastro relizado com sucesso!");
+      setTimeout(() => {
+        navigate("/");
+      }, 5000);
+    } catch (error) {
+      toast.error("Algo deu errado!");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <AuthContext.Provider
       value={{
@@ -87,6 +84,7 @@ export const AuthProvider = ({ children }) => {
         newLoading,
         setNewLoading,
         NewRegister,
+        getClient,
       }}
     >
       {children}
