@@ -6,10 +6,11 @@ import { loginSchema } from "./loginSchema";
 import { AuthContext } from "../../contexts/AuthContext";
 import { StyledLoginPage } from "./style";
 import logo from "../../img/logo_costumer.svg";
+import { Loading } from "../../components/Loading";
 import "react-toastify/dist/ReactToastify.css";
 
 export const LoginPage = () => {
-  const { loading, NewLogin } = useContext(AuthContext);
+  const { loading, NewLogin, setLoading } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
@@ -32,18 +33,21 @@ export const LoginPage = () => {
   });
 
   const submit = async (data) => {
-    await NewLogin(data);
+    setLoading(true);
+    setTimeout(async () => {
+      await NewLogin(data);
 
-    if (localStorage.getItem("@TOKEN")) {
-      setTimeout(() => {
-        navigate("/home");
-      }, 5000);
-    } else {
-      setTimeout(() => {
-        navigate("/");
-      }, 5000);
-      reset();
-    }
+      if (localStorage.getItem("@TOKEN")) {
+        setTimeout(() => {
+          navigate("/home");
+        }, 5000);
+      } else {
+        setTimeout(() => {
+          navigate("/");
+        }, 5000);
+        reset();
+      }
+    }, 1000);
   };
   return (
     <StyledLoginPage>
@@ -73,7 +77,7 @@ export const LoginPage = () => {
             <p className="areaError">{errors.password.message}</p>
           )}
           <button type="submit" className="btLogar" disabled={loading}>
-            {loading ? "Carregando..." : "Entrar"}
+            {loading ? <Loading /> : "Entrar"}
           </button>
         </form>
         <p className="messageCreateRegister">Não possui conta?</p>
@@ -82,7 +86,7 @@ export const LoginPage = () => {
         </button>
       </section>
       <section className="secApresentation">
-        <img src={logo} alt="imagem de costumer contact" />
+        <img src={logo} alt="imagem de costumer contact" className="logo" />
       </section>
     </StyledLoginPage>
   );

@@ -9,6 +9,7 @@ export const AuthProvider = ({ children }) => {
   const [client, setClient] = useState(null);
   const [loading, setLoading] = useState(false);
   const [newLoading, setNewLoading] = useState(true);
+
   const navigate = useNavigate();
 
   const NewLogin = async (data) => {

@@ -9,6 +9,7 @@ export const StyledRegisterPage = styled.div`
   justify-content: center;
   gap: 3.875rem;
   background-color: #051d40;
+  padding: 0rem 0.625rem 0rem 0.625rem;
 
   .secApresentation {
     max-width: 31.25rem;
@@ -37,6 +38,7 @@ export const StyledRegisterPage = styled.div`
   }
 
   .secRegister {
+    margin-bottom: 0.625rem;
     max-width: 31.25rem;
     width: 100%;
     height: 46.9375rem;
@@ -156,24 +158,23 @@ export const StyledRegisterPage = styled.div`
     font-size: 0.75rem;
   }
 
+  .logo {
+    width: 100%;
+    height: 100%;
+  }
+
   @media (max-width: 67.5rem) {
     flex-direction: column;
     gap: 0;
+    height: auto;
 
     .secApresentation {
-      height: 6.8125rem;
+      height: auto;
     }
 
     .secRegister {
       border: none;
-    }
-
-    .reminder {
-      margin-bottom: 0.3125rem;
-    }
-
-    .hidden {
-      display: none;
+      width: 98%;
     }
   }
 `;

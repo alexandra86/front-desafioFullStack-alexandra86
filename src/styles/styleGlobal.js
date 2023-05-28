@@ -21,4 +21,9 @@ button{
     background-color:transparent;
     border:none;
 }
+
+body,
+html {
+  overflow-x: hidden !important;
+}
 `;

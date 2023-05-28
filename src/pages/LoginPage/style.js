@@ -9,13 +9,16 @@ export const StyledLoginPage = styled.div`
   justify-content: center;
   gap: 3.875rem;
   background-color: #051d40;
+  padding: 0rem 0.625rem 0rem 0.625rem;
 
   .secLogin {
+    margin-bottom: 0.625rem;
     max-width: 31.25rem;
     width: 100%;
     height: 34.8125rem;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
     border-radius: 0.25rem;
     border: 0.1125rem solid #8698d9;
@@ -98,9 +101,7 @@ export const StyledLoginPage = styled.div`
   }
 
   .messageCreateRegister {
-    margin-left: 4.375rem;
     margin-bottom: 1.3125rem;
-    max-width: 20.4375rem;
     width: 100%;
     height: 2.375rem;
     text-align: center;
@@ -137,7 +138,7 @@ export const StyledLoginPage = styled.div`
     height: 34.8125rem;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     padding: 1.625rem 1.5rem;
     background-color: #051d40;
@@ -164,35 +165,22 @@ export const StyledLoginPage = styled.div`
     font-size: 0.75rem;
   }
 
+  .logo {
+    width: 100%;
+    height: 100%;
+  }
+
   @media (max-width: 67.5rem) {
-    margin-top: 5.3125rem;
-    flex-direction: column-reverse;
     gap: 0rem;
+    flex-direction: column-reverse;
+    height: auto;
 
     .secApresentation {
-      height: 9.8125rem;
-    }
-
-    .secLogin {
-      border: none;
+      height: auto;
     }
 
     .messageCreateRegister {
       margin-top: 0.875rem;
-    }
-
-    .areaImageAndMessage {
-      height: 8.9375rem;
-      max-width: 28.25rem;
-      width: 100%;
-    }
-
-    .reminder {
-      margin-bottom: 0.4rem;
-    }
-
-    .hidden {
-      display: none;
     }
   }
 

@@ -6,9 +6,10 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { StyledRegisterPage } from "./style";
 import { registerSchema } from "./registerSchema";
 import logo from "../../img/logo_costumer.svg";
+import { Loading } from "../../components/Loading";
 
 export const RegisterPage = () => {
-  const { loading, NewRegister } = useContext(AuthContext);
+  const { loading, NewRegister, setLoading } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
@@ -35,14 +36,17 @@ export const RegisterPage = () => {
   });
 
   const submit = async (data) => {
-    const information = { ...data };
-    await NewRegister(information);
-    reset();
+    setLoading(true);
+    setTimeout(async () => {
+      const information = { ...data };
+      await NewRegister(information);
+      reset();
+    }, 1000);
   };
   return (
     <StyledRegisterPage>
       <section className="secApresentation">
-        <img src={logo} alt="imagem de costumer contact" />
+        <img src={logo} alt="imagem de costumer contact" className="logo" />
       </section>
       <section className="secRegister">
         <div className="areaRegisterAndGoToLogin">
@@ -129,7 +133,7 @@ export const RegisterPage = () => {
             <p className="areaError">{errors.gender.message}</p>
           )}
           <button type="submit" className="btRegister" disabled={loading}>
-            {loading ? "Carregando..." : "Cadastrar"}
+            {loading ? <Loading /> : "Cadastrar"}
           </button>
         </form>
       </section>
