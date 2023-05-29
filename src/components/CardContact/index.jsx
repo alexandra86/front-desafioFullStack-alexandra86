@@ -18,6 +18,9 @@ export const CardContact = ({ elem }) => {
         <p className="nivelCourse">
           <span className="identification">Phone:</span> {elem.phone}
         </p>
+        <p className="nivelCourse">
+          <span className="identification">Gender:</span> {elem.gender}
+        </p>
         <p className="registerDate">Register Date:</p>
         <div className="areaDate">
           <p className="nivelCourse">

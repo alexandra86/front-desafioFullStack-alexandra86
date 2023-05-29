@@ -5,7 +5,7 @@ export const registerSchema = yup.object().shape({
     .string()
     .required("O nome é obrigatório!")
     .min(3, "O nome precisa ter pelo 3 caracteres.")
-    .max(200, "O nome pode ter no máximo 200 caracteres."),
+    .max(127, "O nome pode ter no máximo 127 caracteres."),
 
   email: yup
     .string()
