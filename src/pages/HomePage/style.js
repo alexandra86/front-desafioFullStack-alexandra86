@@ -4,7 +4,7 @@ export const StyledHomePage = styled.div`
   max-width: 100vw;
   width: 100%;
   height: 100vh;
-  background-color: #121214;
+  background-color: #7fadeb;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,32 +18,37 @@ export const StyledHomePage = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: #051d40;
+    padding-right: 5px;
+    border-radius: 0.25rem;
   }
 
   .areaUser {
     margin-bottom: 2.3125rem;
     max-width: 90rem;
     width: 60%;
-    height: 7.375rem;
+    height: 100px;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    gap: 10px;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #7fadeb;
   }
 
   .areaWelcome {
-    margin-top: 2.8125rem;
-    font-family: "Inter", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 700;
     font-size: 1.125rem;
-    color: #f8f9fa;
+    color: #000000;
   }
 
   .course {
     margin-top: 2.8125rem;
-    font-family: "Inter", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-size: 0.75rem;
-    color: #868e96;
+    color: #000000;
   }
 
   .areaInformation {
@@ -57,7 +62,7 @@ export const StyledHomePage = styled.div`
     gap: 1.4375rem;
   }
 
-  .areaTechnology {
+  .areaContact {
     max-width: 90rem;
     width: 100%;
     height: 2rem;
@@ -66,21 +71,21 @@ export const StyledHomePage = styled.div`
     justify-content: space-between;
   }
 
-  .titleTechnology {
-    font-family: "Inter", sans-serif;
+  .titleContactHome {
+    font-family: "Roboto", sans-serif;
     font-weight: 600;
-    font-size: 1rem;
-    color: #f8f9fa;
+    font-size: 18px;
+    color: #000000;
   }
 
-  .ulCardTech {
+  .ulCardContact {
     max-width: 90rem;
     width: 100%;
     background-color: #212529;
     border-radius: 0.25rem;
     padding: 1.4375rem 1.625rem 1.4375rem 1.375rem;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: 1rem;
   }
 
@@ -91,16 +96,17 @@ export const StyledHomePage = styled.div`
     padding: 0rem 1rem;
     border-radius: 0.25rem;
     border: 0.07625rem solid #212529;
-    background-color: #212529;
-    font-family: "Inter", sans-serif;
+    background-color: #8698d9;
+    font-family: "Roboto", sans-serif;
     font-weight: 600;
     font-size: 0.75rem;
-    color: #f8f9fa;
+    color: #000000;
   }
 
   .btComeBackLogin:hover {
-    border: 0.07625rem solid #343b41;
-    background-color: #343b41;
+    border: 0.07625rem solid #9f2fff;
+    background-color: #9f2fff;
+    color: #f8f9fa;
   }
 
   .btOpenModal {
@@ -119,7 +125,7 @@ export const StyledHomePage = styled.div`
       align-items: center;
       width: 60%;
     }
-    .areaTechnology {
+    .areaContact {
       display: flex;
       align-items: center;
       gap: 0;
@@ -158,7 +164,7 @@ export const StyledHomePage = styled.div`
       width: 80%;
       line-height: 1.75rem;
     }
-    .ulCardTech {
+    .ulCardContact {
       padding: 0.625rem 0.3125rem;
     }
   }
