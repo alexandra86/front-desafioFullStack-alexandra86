@@ -41,7 +41,7 @@ export const StyleCardContact = styled.li`
     align-items: center;
     gap: 0.375rem;
   }
-  .nivelCourse {
+  .identification {
     font-family: "Roboto", sans-serif;
     font-weight: 500;
     font-size: 0.76125rem;
@@ -49,7 +49,7 @@ export const StyleCardContact = styled.li`
     line-height: 1.125rem;
   }
 
-  .identification {
+  .emphasis {
     color: #45214a;
   }
   .btDelete {

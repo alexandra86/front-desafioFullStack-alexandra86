@@ -101,7 +101,7 @@ export const StyledLoginPage = styled.div`
   }
 
   .messageCreateRegister {
-    margin-top: 10px;
+    margin-top: 0.625rem;
     margin-bottom: 1.3125rem;
     width: 100%;
     height: 2.375rem;

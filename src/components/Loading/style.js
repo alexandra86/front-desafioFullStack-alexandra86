@@ -4,8 +4,8 @@ export const StyledLoading = styled.div`
   .carregando {
     background-color: transparent;
     animation: giro 2s linear infinite;
-    height: 21px;
-    width: 14px;
+    height: 1.313rem;
+    width: 0.875rem;
     color: #ffffff;
   }
 

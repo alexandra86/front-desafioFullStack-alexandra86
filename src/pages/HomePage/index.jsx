@@ -7,7 +7,7 @@ import { CardContact } from "../../components/CardContact";
 import logoHome from "../../img/LogoHome.png";
 import { ContactContext } from "../../contexts/ContactContext";
 import { RegisterContactModal } from "../../components/RegisterContactModal";
-import { EditContactModal } from "../../components/EditConatctModal";
+import { EditContactModal } from "../../components/EditContactModal";
 import "react-toastify/dist/ReactToastify.css";
 
 export const HomePage = () => {

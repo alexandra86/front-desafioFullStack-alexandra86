@@ -19,7 +19,7 @@ export const StyledHomePage = styled.div`
     align-items: center;
     justify-content: space-between;
     background-color: #051d40;
-    padding-right: 5px;
+    padding-right: 0.313rem;
     border-radius: 0.25rem;
   }
 
@@ -27,9 +27,9 @@ export const StyledHomePage = styled.div`
     margin-bottom: 2.3125rem;
     max-width: 90rem;
     width: 60%;
-    height: 100px;
+    height: 6.25rem;
     display: flex;
-    gap: 10px;
+    gap: 0.625rem;
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
@@ -74,7 +74,7 @@ export const StyledHomePage = styled.div`
   .titleContactHome {
     font-family: "Roboto", sans-serif;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 1.125rem;
     color: #000000;
   }
 

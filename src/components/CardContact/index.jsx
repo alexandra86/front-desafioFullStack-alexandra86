@@ -13,25 +13,25 @@ export const CardContact = ({ elem }) => {
   return (
     <StyleCardContact key={elem.id}>
       <div className="areaClient">
-        <h3 className="nivelCourse">
-          <span className="identification">Name:</span> {elem.fullName}
+        <h3 className="identification">
+          <span className="emphasis">Name:</span> {elem.fullName}
         </h3>
-        <p className="nivelCourse">
-          <span className="identification">E-mail:</span> {elem.email}
+        <p className="identification">
+          <span className="emphasis">E-mail:</span> {elem.email}
         </p>
-        <p className="nivelCourse">
-          <span className="identification">Phone:</span> {elem.phone}
+        <p className="identification">
+          <span className="emphasis">Phone:</span> {elem.phone}
         </p>
-        <p className="nivelCourse">
-          <span className="identification">Gender:</span> {elem.gender}
+        <p className="identification">
+          <span className="emphasis">Gender:</span> {elem.gender}
         </p>
         <p className="registerDate">Register Date:</p>
         <div className="areaDate">
-          <p className="nivelCourse">
-            <span className="identification">Date:</span> {formattedDate}
+          <p className="identification">
+            <span className="emphasis">Date:</span> {formattedDate}
           </p>
-          <p className="nivelCourse">
-            <span className="identification">Hour:</span> {formattedTime}
+          <p className="identification">
+            <span className="emphasis">Hour:</span> {formattedTime}
           </p>
         </div>
       </div>
