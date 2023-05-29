@@ -65,7 +65,7 @@ export const LoginPage = () => {
           />
           {errors.email && <p className="areaError">{errors.email.message}</p>}
           <label htmlFor="password" className="lbLogin">
-            Password
+            Senha
           </label>
           <input
             type="password"

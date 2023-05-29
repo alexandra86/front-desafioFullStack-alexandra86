@@ -12,7 +12,7 @@ export const HomePage = () => {
   if (newLoading) {
     return null;
   }
-  console.log(client);
+
   const goLoginClick = () => {
     navigate("/");
     client.client = null;

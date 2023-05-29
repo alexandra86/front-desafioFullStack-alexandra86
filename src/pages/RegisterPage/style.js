@@ -41,7 +41,7 @@ export const StyledRegisterPage = styled.div`
     margin-bottom: 0.625rem;
     max-width: 31.25rem;
     width: 100%;
-    height: 46.9375rem;
+    height: 48.9375rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -62,7 +62,7 @@ export const StyledRegisterPage = styled.div`
   }
 
   .titleRegister {
-    font-family: "Inter", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 700;
     font-size: 1.125rem;
     color: #000000;
@@ -72,7 +72,7 @@ export const StyledRegisterPage = styled.div`
     max-width: 8.75rem;
     width: 100%;
     height: 1.375rem;
-    font-family: "Inter", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-size: 0.875rem;
     color: rgba(0, 0, 0, 0.7);
@@ -141,7 +141,7 @@ export const StyledRegisterPage = styled.div`
     background-color: #9f2fff;
     border-radius: 0.5rem;
     padding: 0rem 2.5rem;
-    font-family: "Inter", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 600;
     font-size: 1rem;
     color: #ffffff;
@@ -153,7 +153,7 @@ export const StyledRegisterPage = styled.div`
 
   .areaError {
     color: #e60000;
-    font-family: "Inter", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 500;
     font-size: 0.75rem;
   }

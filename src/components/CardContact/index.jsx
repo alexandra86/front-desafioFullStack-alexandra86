@@ -4,7 +4,7 @@ import moment from "moment";
 export const CardContact = ({ elem }) => {
   const currentDateTime = new Date(elem.registerDate);
   const convertedDateTime = moment(currentDateTime).utcOffset("+03:00");
-  const formattedDate = convertedDateTime.format("DD-MM-YYYY");
+  const formattedDate = convertedDateTime.format("DD/MM/YYYY");
   const formattedTime = convertedDateTime.format("HH:mm:ss");
   return (
     <StyleCardContact key={elem.id}>

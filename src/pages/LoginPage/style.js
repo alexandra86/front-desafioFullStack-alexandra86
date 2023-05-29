@@ -15,7 +15,7 @@ export const StyledLoginPage = styled.div`
     margin-bottom: 0.625rem;
     max-width: 31.25rem;
     width: 100%;
-    height: 34.8125rem;
+    height: 33.8125rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -91,7 +91,7 @@ export const StyledLoginPage = styled.div`
     background-color: #9f2fff;
     border-radius: 0.5rem;
     padding: 0rem 2.5rem;
-    font-family: "Inter", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 600;
     font-size: 1rem;
     color: #ffffff;
@@ -101,12 +101,13 @@ export const StyledLoginPage = styled.div`
   }
 
   .messageCreateRegister {
+    margin-top: 10px;
     margin-bottom: 1.3125rem;
     width: 100%;
     height: 2.375rem;
     text-align: center;
     line-height: 1.125rem;
-    font-family: "Inter", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-size: 0.875rem;
     color: #000000;
@@ -121,7 +122,7 @@ export const StyledLoginPage = styled.div`
     background-color: #343b41;
     border-radius: 0.5rem;
     padding: 0rem 2.5rem;
-    font-family: "Inter", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 600;
     font-size: 1rem;
     color: #ffffff;
@@ -160,7 +161,7 @@ export const StyledLoginPage = styled.div`
 
   .areaError {
     color: #e60000;
-    font-family: "Inter", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 500;
     font-size: 0.75rem;
   }

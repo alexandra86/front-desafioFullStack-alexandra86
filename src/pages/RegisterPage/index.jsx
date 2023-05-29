@@ -61,7 +61,7 @@ export const RegisterPage = () => {
           noValidate
         >
           <label htmlFor="name" className="lbRegister">
-            Name
+            Nome
           </label>
           <input
             type="text"
@@ -81,7 +81,7 @@ export const RegisterPage = () => {
           />
           {errors.email && <p className="areaError">{errors.email.message}</p>}
           <label htmlFor="password" className="lbRegister">
-            Password
+            Senha
           </label>
           <input
             type="password"
@@ -93,7 +93,7 @@ export const RegisterPage = () => {
             <p className="areaError">{errors.password.message}</p>
           )}
           <label htmlFor="phone" className="lbRegister">
-            Phone
+            Telefone
           </label>
           <input
             type="text"
@@ -104,7 +104,7 @@ export const RegisterPage = () => {
           {errors.phone && <p className="areaError">{errors.phone.message}</p>}
 
           <label htmlFor="image" className="lbRegister">
-            Image
+            Imagem
           </label>
           <input
             type="url"
@@ -115,7 +115,7 @@ export const RegisterPage = () => {
           {errors.image && <p className="areaError">{errors.image.message}</p>}
 
           <label htmlFor="gender" className="lbRegister">
-            Gender
+            Gênero
           </label>
           <select
             name="gender"
@@ -124,10 +124,10 @@ export const RegisterPage = () => {
             {...register("gender")}
           >
             <option value="">Selecione</option>
-            <option value="male">male</option>
-            <option value="female">female</option>
-            <option value="no binary">no binary</option>
-            <option value="I prefer not to say">I prefer not to say</option>
+            <option value="male">masculino</option>
+            <option value="female">feminino</option>
+            <option value="no binary">não binário</option>
+            <option value="I prefer not to say">prefiro não dizer</option>
           </select>
           {errors.gender && (
             <p className="areaError">{errors.gender.message}</p>

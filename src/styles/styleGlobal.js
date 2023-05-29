@@ -22,8 +22,4 @@ button{
     border:none;
 }
 
-body,
-html {
-  overflow-x: hidden !important;
-}
 `;
