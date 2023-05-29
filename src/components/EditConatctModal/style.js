@@ -27,7 +27,7 @@ export const StyledContainerModal = styled.div`
     justify-content: space-between;
   }
   .titleModal {
-    font-family: "Inter", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 700;
     font-size: 0.875rem;
     color: #f8f9fa;
@@ -36,7 +36,7 @@ export const StyledContainerModal = styled.div`
     max-width: 0.6875rem;
     width: 100%;
     height: 1.625rem;
-    font-family: "Nunito", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 600;
     font-size: 1rem;
     color: #868e96;
@@ -57,7 +57,7 @@ export const StyledContainerModal = styled.div`
     border-radius: 0rem 0rem 0.25rem 0.25rem;
   }
   .labelModal {
-    font-family: "Inter", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-size: 0.76125rem;
     color: #f8f9fa;
@@ -74,7 +74,7 @@ export const StyledContainerModal = styled.div`
   }
   .inputModal::placeholder {
     color: #f8f9fa;
-    font-family: "Inter", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-size: 1.015rem;
   }
@@ -87,13 +87,13 @@ export const StyledContainerModal = styled.div`
     border: 0.07625rem solid #f8f9fa;
     border-radius: 0.25rem;
     color: #f8f9fa;
-    font-family: "Inter", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-size: 1.015rem;
   }
   .areaError {
     color: red;
-    font-family: "Inter", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 500;
     font-size: 0.75rem;
   }
@@ -105,7 +105,7 @@ export const StyledContainerModal = styled.div`
     padding: 0rem 1.375rem;
     background-color: #ff577f;
     border: 0.07625rem solid #ff577f;
-    font-family: "Inter", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 500;
     font-size: 1rem;
     color: #ffffff;

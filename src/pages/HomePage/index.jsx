@@ -6,13 +6,17 @@ import { StyledHomePage } from "./style";
 import { CardContact } from "../../components/CardContact";
 import logoHome from "../../img/LogoHome.png";
 import { ContactContext } from "../../contexts/ContactContext";
+import { RegisterContactModal } from "../../components/RegisterContactModal";
+import { EditContactModal } from "../../components/EditConatctModal";
 import "react-toastify/dist/ReactToastify.css";
-import { RegisterContactModal } from "../../components/RegisterConatctModal.jsx";
 
 export const HomePage = () => {
   const { client, newLoading } = useContext(AuthContext);
-  const { modalIsOpen, handleModal } = useContext(ContactContext);
+  const { modalIsOpen, handleModal, modalIsEditOpen } =
+    useContext(ContactContext);
+
   const navigate = useNavigate();
+
   if (newLoading) {
     return null;
   }
@@ -57,6 +61,7 @@ export const HomePage = () => {
         </ul>
       </div>
       {modalIsOpen && <RegisterContactModal />}
+      {modalIsEditOpen && <EditContactModal />}
     </StyledHomePage>
   );
 };

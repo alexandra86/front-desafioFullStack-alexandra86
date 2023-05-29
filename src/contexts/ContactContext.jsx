@@ -38,6 +38,38 @@ export const ContactProvider = ({ children }) => {
     }
   };
 
+  const removeContact = async (id) => {
+    try {
+      setLoading(true);
+
+      await api.delete(`/contacts/${id}`);
+      getClient();
+
+      toast.info("Contato removido com sucesso!");
+    } catch (error) {
+      toast.error("Algo não está certo!");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const editContact = async (data) => {
+    console.log(data);
+    try {
+      setLoading(true);
+
+      await api.patch(`/contacts/${data.id}`, data);
+      getClient();
+
+      setIsEditOpen(false);
+      toast.success("Contato alterado com sucesso!");
+    } catch (error) {
+      toast.error("Algo não está certo!");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <ContactContext.Provider
       value={{
@@ -53,6 +85,8 @@ export const ContactProvider = ({ children }) => {
         RegisterContact,
         handleModal,
         handleEditModal,
+        removeContact,
+        editContact,
       }}
     >
       {children}

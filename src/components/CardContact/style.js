@@ -39,7 +39,7 @@ export const StyleCardContact = styled.li`
   .areabuttons {
     display: flex;
     align-items: center;
-    gap: 1.375rem;
+    gap: 0.375rem;
   }
   .nivelCourse {
     font-family: "Roboto", sans-serif;
