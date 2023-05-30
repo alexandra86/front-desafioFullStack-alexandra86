@@ -97,7 +97,12 @@ export const StyledLoginPage = styled.div`
     color: #ffffff;
   }
   .btLogar:hover {
-    background-color: #fc8dca;
+    background: rgb(159, 47, 255);
+    background: radial-gradient(
+      circle,
+      rgba(159, 47, 255, 1) 24%,
+      rgba(5, 29, 64, 1) 100%
+    );
   }
 
   .messageCreateRegister {
@@ -130,7 +135,8 @@ export const StyledLoginPage = styled.div`
 
   .btGoToRegister:hover {
     background-color: #999999;
-    color: #e0e0e0;
+    color: #000000;
+    border: 0.063rem solid #343b41;
   }
 
   .secApresentation {

@@ -148,7 +148,12 @@ export const StyledRegisterPage = styled.div`
   }
 
   .btRegister:hover {
-    background-color: #fc8dca;
+    background: rgb(159, 47, 255);
+    background: radial-gradient(
+      circle,
+      rgba(159, 47, 255, 1) 24%,
+      rgba(5, 29, 64, 1) 100%
+    );
   }
 
   .areaError {

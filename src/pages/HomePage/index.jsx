@@ -38,8 +38,18 @@ export const HomePage = () => {
 
       {client?.client && (
         <div className="areaUser">
-          <h2 className="areaWelcome">Olá! &#128521;</h2>
-          <p className="areaWelcome">{client.client.name}</p>
+          <div className="hello">
+            <h2 className="areaWelcome">Olá! &#128521;</h2>
+            <p className="areaWelcome">{client.client.name}</p>
+          </div>
+          <div className="areaImageClient">
+            <img
+              src={client.client.image}
+              alt="Imagem do cliente"
+              className="imageClient"
+            />
+            <button className="btViewProfile"> Ver perfil</button>
+          </div>
         </div>
       )}
 

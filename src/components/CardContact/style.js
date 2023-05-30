@@ -4,10 +4,10 @@ import lapis from "../../img/pencil.png";
 import fundoLi from "../../img/fundoLi.jpg";
 
 export const StyleCardContact = styled.li`
-  max-width: 293px;
+  max-width: 18.313rem;
   width: 100%;
-  height: 9.0625rem;
-  padding: 0.8125rem 1.38875rem;
+  height: 12.0625rem;
+  padding: 0.8125rem 0.38875rem;
   display: flex;
   align-items: center;
   justify-content: space-between;

@@ -28,12 +28,17 @@ export const StyledHomePage = styled.div`
     max-width: 90rem;
     width: 60%;
     height: 6.25rem;
+    padding: 0.188rem 0.313rem 0rem 0.313rem;
     display: flex;
-    gap: 0.625rem;
-    align-items: flex-start;
-    justify-content: center;
-    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
     background-color: #7fadeb;
+  }
+
+  .hello {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
   }
 
   .areaWelcome {
@@ -43,18 +48,42 @@ export const StyledHomePage = styled.div`
     color: #000000;
   }
 
-  .course {
-    margin-top: 2.8125rem;
+  .areaImageClient {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+
+  .imageClient {
+    width: 6rem;
+    height: 5.938rem;
+    border-radius: 100%;
+    border: 0.156rem solid #051d40;
+  }
+
+  .btViewProfile {
+    background: rgb(159, 47, 255);
+    background: radial-gradient(
+      circle,
+      rgba(159, 47, 255, 1) 24%,
+      rgba(5, 29, 64, 1) 100%
+    );
+    height: 1.5rem;
+    border-radius: 0.438rem;
     font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    font-size: 0.75rem;
-    color: #000000;
+    font-weight: 500;
+    color: #ffffff;
+  }
+
+  .btViewProfile:hover {
+    -webkit-transform: scale(1.1);
   }
 
   .areaInformation {
     max-width: 90rem;
     width: 60%;
-    height: 7.375rem;
+    max-height: 26rem;
+    overflow: auto;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
@@ -79,13 +108,20 @@ export const StyledHomePage = styled.div`
   }
 
   .ulCardContact {
+    margin-bottom: 0.625rem;
     max-width: 90rem;
     width: 100%;
-    background-color: #212529;
+    background: rgb(5, 29, 64);
+    background: radial-gradient(
+      circle,
+      rgba(5, 29, 64, 1) 24%,
+      rgba(93, 102, 115, 1) 99%
+    );
     border-radius: 0.25rem;
     padding: 1.4375rem 1.625rem 1.4375rem 1.375rem;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
+    gap: 1rem;
     gap: 1rem;
   }
 
@@ -110,6 +146,7 @@ export const StyledHomePage = styled.div`
   }
 
   .btOpenModal {
+    margin-right: 0.625rem;
     max-width: 2.030625rem;
     width: 100%;
     height: 2rem;
@@ -117,6 +154,11 @@ export const StyledHomePage = styled.div`
     font-size: 0.67rem;
     padding: 0.625rem 0.625rem;
     color: #ffffff;
+  }
+
+  .btOpenModal:hover {
+    background-color: #9f2fff;
+    -webkit-transform: scale(1.1);
   }
 
   @media (max-width: 56.25rem) {
@@ -144,17 +186,14 @@ export const StyledHomePage = styled.div`
       justify-content: space-between;
     }
     .logoKenziHub {
-      max-width: 6.595625rem;
+      max-width: 10.5956rem;
       width: 100%;
-      height: 0.914375rem;
+      height: 2.91438rem;
     }
     .areaUser {
       display: flex;
-      align-items: flex-start;
-      justify-content: flex-start;
-      flex-direction: column;
+      align-items: center;
       width: 80%;
-      gap: 0.625rem;
     }
 
     .areaInformation {
@@ -166,6 +205,16 @@ export const StyledHomePage = styled.div`
     }
     .ulCardContact {
       padding: 0.625rem 0.3125rem;
+    }
+    .imageClient {
+      width: 4.375rem;
+      height: 4.188rem;
+    }
+    .btComeBackLogin {
+      max-width: 3.21812rem;
+      width: 100%;
+      height: 1.50687rem;
+      font-size: 0.75rem;
     }
   }
 `;
