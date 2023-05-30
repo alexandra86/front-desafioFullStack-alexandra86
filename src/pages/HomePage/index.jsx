@@ -64,11 +64,19 @@ export const HomePage = () => {
             +
           </button>
         </div>
-        <ul className="ulCardContact">
-          {client?.contacts.map((elem) => (
-            <CardContact key={elem.id} elem={elem} />
-          ))}
-        </ul>
+        {client.contacts && client.contacts.length > 0 ? (
+          <ul className="ulCardContact">
+            {client.contacts.map((elem) => (
+              <CardContact key={elem.id} elem={elem} />
+            ))}
+          </ul>
+        ) : (
+          <div className="areaNoContact">
+            <h1 className="freseNoContact">
+              Você não ainda possui contatos cadastrados.
+            </h1>
+          </div>
+        )}
       </div>
       {modalIsOpen && <RegisterContactModal />}
       {modalIsEditOpen && <EditContactModal />}

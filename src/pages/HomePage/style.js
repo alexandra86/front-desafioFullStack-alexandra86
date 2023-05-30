@@ -91,6 +91,31 @@ export const StyledHomePage = styled.div`
     gap: 1.4375rem;
   }
 
+  .areaNoContact {
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 12.5rem;
+    border-radius: 0.438rem;
+    background: rgb(5, 29, 64);
+    background: radial-gradient(
+      circle,
+      rgba(5, 29, 64, 1) 24%,
+      rgba(93, 102, 115, 1) 99%
+    );
+  }
+
+  .freseNoContact {
+    border-radius: 0.438rem;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    color: #ffffff;
+  }
+
   .areaContact {
     max-width: 90rem;
     width: 100%;
