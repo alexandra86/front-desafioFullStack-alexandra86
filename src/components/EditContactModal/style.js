@@ -15,7 +15,7 @@ export const StyledContainerModal = styled.div`
     max-width: 23.0625rem;
     width: 100%;
     border-radius: 0.25rem;
-    background-color: #343b41;
+    background-color: #051d40;
   }
   .headerModal {
     max-width: 23.0625rem;
@@ -39,10 +39,9 @@ export const StyledContainerModal = styled.div`
     font-family: "Roboto", sans-serif;
     font-weight: 600;
     font-size: 1rem;
-    color: #868e96;
+    color: #ffffff;
   }
   .btCloseModal:hover {
-    color: #ffffff;
     -webkit-transform: scale(1.1);
     -webkit-transition: scale(1.1);
   }
@@ -50,7 +49,7 @@ export const StyledContainerModal = styled.div`
     max-width: 23.0625rem;
     width: 100%;
     padding: 0.75rem 1.25rem;
-    background-color: #212529;
+    background-color: #7fadeb;
     display: flex;
     flex-direction: column;
     gap: 0.8125rem;
@@ -60,20 +59,20 @@ export const StyledContainerModal = styled.div`
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-size: 0.76125rem;
-    color: #f8f9fa;
+    color: #000000;
   }
   .inputModal {
     max-width: 20.620625rem;
     width: 100%;
     height: 3rem;
     padding: 0rem 1rem;
-    background-color: #343b41;
-    border: 0.07625rem solid #f8f9fa;
+    background-color: #d9e8fc;
+    border: 0.07625rem solid #8698d9;
     border-radius: 0.25rem;
-    color: #f8f9fa;
+    color: #000000;
   }
   .inputModal::placeholder {
-    color: #f8f9fa;
+    color: #000000;
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-size: 1.015rem;
@@ -83,10 +82,10 @@ export const StyledContainerModal = styled.div`
     width: 100%;
     height: 3rem;
     padding: 0rem 1rem;
-    background-color: #343b41;
-    border: 0.07625rem solid #f8f9fa;
+    background-color: #d9e8fc;
+    border: 0.07625rem solid #8698d9;
     border-radius: 0.25rem;
-    color: #f8f9fa;
+    color: #000000;
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-size: 1.015rem;
@@ -103,8 +102,7 @@ export const StyledContainerModal = styled.div`
     width: 100%;
     height: 3rem;
     padding: 0rem 1.375rem;
-    background-color: #ff577f;
-    border: 0.07625rem solid #ff577f;
+    background-color: #9f2fff;
     font-family: "Roboto", sans-serif;
     font-weight: 500;
     font-size: 1rem;
@@ -112,8 +110,12 @@ export const StyledContainerModal = styled.div`
     border-radius: 0.25rem;
   }
   .btRegisterModal:hover {
-    border: 0.07625rem solid #ff427f;
-    background-color: #ff427f;
+    background: rgb(159, 47, 255);
+    background: radial-gradient(
+      circle,
+      rgba(159, 47, 255, 1) 24%,
+      rgba(5, 29, 64, 1) 100%
+    );
   }
 
   @media (max-width: 43.75rem) {

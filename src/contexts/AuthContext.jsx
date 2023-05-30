@@ -25,7 +25,7 @@ export const AuthProvider = ({ children }) => {
       api.defaults.headers.common[
         "Authorization"
       ] = `Bearer ${response.data.token}`;
-
+      getClient();
       setTimeout(() => {
         navigate("/home");
       }, 3000);

@@ -91,6 +91,18 @@ export const StyledHomePage = styled.div`
     gap: 1.4375rem;
   }
 
+  .areaInformation::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+  .areaInformation::-webkit-scrollbar-thumb {
+    background-color: #051d40;
+  }
+
+  .areaInformation::-webkit-scrollbar-thumb:hover {
+    background-color: #051d40;
+  }
+
   .areaNoContact {
     background: white;
     display: flex;
@@ -146,7 +158,7 @@ export const StyledHomePage = styled.div`
     padding: 1.4375rem 1.625rem 1.4375rem 1.375rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
-    gap: 1rem;
+    justify-items: center;
     gap: 1rem;
   }
 

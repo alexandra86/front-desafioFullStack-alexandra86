@@ -17,10 +17,6 @@ export const HomePage = () => {
 
   const navigate = useNavigate();
 
-  if (newLoading) {
-    return null;
-  }
-
   const goLoginClick = () => {
     navigate("/");
     client.client = null;
@@ -28,58 +24,65 @@ export const HomePage = () => {
     localStorage.removeItem("@TOKENCLIENT");
   };
   return (
-    <StyledHomePage>
-      <header className="headerHome">
-        <img src={logoHome} alt="logo da Kenzie Hub" className="logoKenziHub" />
-        <button className="btComeBackLogin" onClick={goLoginClick}>
-          Sair
-        </button>
-      </header>
-
-      {client?.client && (
-        <div className="areaUser">
-          <div className="hello">
-            <h2 className="areaWelcome">Olá! &#128521;</h2>
-            <p className="areaWelcome">{client.client.name}</p>
-          </div>
-          <div className="areaImageClient">
+    <>
+      {newLoading && <div>Carregando...</div>}
+      {client && (
+        <StyledHomePage>
+          <header className="headerHome">
             <img
-              src={client.client.image}
-              alt="Imagem do cliente"
-              className="imageClient"
+              src={logoHome}
+              alt="logo da Kenzie Hub"
+              className="logoKenziHub"
             />
-            <button className="btViewProfile"> Ver perfil</button>
-          </div>
-        </div>
-      )}
+            <button className="btComeBackLogin" onClick={goLoginClick}>
+              Sair
+            </button>
+          </header>
 
-      <div className="areaInformation">
-        <div className="areaContact">
-          <h3 className="titleContactHome">&#128242; Contatos</h3>
-          <button
-            type="button"
-            className="btOpenModal"
-            onClick={() => handleModal()}
-          >
-            +
-          </button>
-        </div>
-        {client.contacts && client.contacts.length > 0 ? (
-          <ul className="ulCardContact">
-            {client.contacts.map((elem) => (
-              <CardContact key={elem.id} elem={elem} />
-            ))}
-          </ul>
-        ) : (
-          <div className="areaNoContact">
-            <h1 className="freseNoContact">
-              Você não ainda possui contatos cadastrados.
-            </h1>
+          <div className="areaUser">
+            <div className="hello">
+              <h2 className="areaWelcome">Olá! &#128521;</h2>
+              <p className="areaWelcome">{client.client.name}</p>
+            </div>
+            <div className="areaImageClient">
+              <img
+                src={client.client.image}
+                alt="Imagem do cliente"
+                className="imageClient"
+              />
+              <button className="btViewProfile"> Ver perfil</button>
+            </div>
           </div>
-        )}
-      </div>
-      {modalIsOpen && <RegisterContactModal />}
-      {modalIsEditOpen && <EditContactModal />}
-    </StyledHomePage>
+
+          <div className="areaInformation">
+            <div className="areaContact">
+              <h3 className="titleContactHome">&#128242; Contatos</h3>
+              <button
+                type="button"
+                className="btOpenModal"
+                onClick={() => handleModal()}
+              >
+                +
+              </button>
+            </div>
+            {client.contacts && client.contacts.length > 0 ? (
+              <ul className="ulCardContact">
+                {client.contacts.map((elem) => (
+                  <CardContact key={elem.id} elem={elem} />
+                ))}
+              </ul>
+            ) : (
+              <div className="areaNoContact">
+                <h1 className="freseNoContact">
+                  Você não ainda possui contatos cadastrados.
+                </h1>
+              </div>
+            )}
+          </div>
+          {modalIsOpen && <RegisterContactModal />}
+          {modalIsEditOpen && <EditContactModal />}
+        </StyledHomePage>
+      )}
+    </>
   );
 };

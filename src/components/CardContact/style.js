@@ -15,6 +15,10 @@ export const StyleCardContact = styled.li`
   background-image: url(${fundoLi});
   border-radius: 0.25rem;
 
+  :hover {
+    border: 0.094rem solid #45214a;
+  }
+
   .areClient {
     max-width: 18.75rem;
     width: 100%;
