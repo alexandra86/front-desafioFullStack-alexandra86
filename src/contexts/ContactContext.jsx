@@ -9,6 +9,7 @@ export const ContactProvider = ({ children }) => {
   const { client, getClient } = useContext(AuthContext);
   const [modalIsOpen, setIsOpen] = useState(false);
   const [modalIsEditOpen, setIsEditOpen] = useState(false);
+  const [modalIsContactsOpen, setIsContactsOpen] = useState(false);
   const [selectContact, setSelectContact] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -18,6 +19,10 @@ export const ContactProvider = ({ children }) => {
 
   const handleEditModal = () => {
     setIsEditOpen(!modalIsEditOpen);
+  };
+
+  const handleContactsModal = () => {
+    setIsContactsOpen(!modalIsContactsOpen);
   };
 
   const RegisterContact = async (data) => {
@@ -87,6 +92,9 @@ export const ContactProvider = ({ children }) => {
         handleEditModal,
         removeContact,
         editContact,
+        handleContactsModal,
+        modalIsContactsOpen,
+        setIsContactsOpen,
       }}
     >
       {children}

@@ -5,6 +5,7 @@ import { ContactContext } from "../../contexts/ContactContext.jsx";
 import { StyledContainerModal } from "./style.js";
 import { createPortal } from "react-dom";
 import { editContactSchema } from "./editModalSchema.js";
+import InputMask from "react-input-mask";
 
 export const EditContactModal = () => {
   const { handleEditModal, editContact, selectContact, loading } =
@@ -73,8 +74,9 @@ export const EditContactModal = () => {
           <label htmlFor="phone" className="labelModal">
             Telefone
           </label>
-          <input
+          <InputMask
             type="text"
+            mask="(99) 99999-9999"
             name="phone"
             placeholder="Digite seu nome"
             className="inputModal"

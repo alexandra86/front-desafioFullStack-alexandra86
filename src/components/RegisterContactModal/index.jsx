@@ -5,6 +5,7 @@ import { ContactContext } from "../../contexts/ContactContext.jsx";
 import { registerContactSchema } from "./registerContactSchema.js";
 import { StyledContainerModal } from "./style.js";
 import { createPortal } from "react-dom";
+import InputMask from "react-input-mask";
 
 export const RegisterContactModal = () => {
   const { handleModal, RegisterContact, loading } = useContext(ContactContext);
@@ -71,8 +72,9 @@ export const RegisterContactModal = () => {
           <label htmlFor="phone" className="labelModal">
             Telefone
           </label>
-          <input
+          <InputMask
             type="text"
+            mask="(99) 99999-9999"
             name="phone"
             placeholder="Digite seu nome"
             className="inputModal"

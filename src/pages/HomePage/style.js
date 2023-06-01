@@ -19,7 +19,7 @@ export const StyledHomePage = styled.div`
     align-items: center;
     justify-content: space-between;
     background-color: #051d40;
-    padding-right: 0.313rem;
+    padding-right: 1.313rem;
     border-radius: 0.25rem;
   }
 
@@ -137,7 +137,8 @@ export const StyledHomePage = styled.div`
     justify-content: space-between;
   }
 
-  .titleContactHome {
+  .bTContactHome {
+    background-color: transparent;
     font-family: "Roboto", sans-serif;
     font-weight: 600;
     font-size: 1.125rem;
@@ -231,6 +232,8 @@ export const StyledHomePage = styled.div`
       display: flex;
       align-items: center;
       width: 80%;
+      flex-direction: column;
+      gap: 0.625rem;
     }
 
     .areaInformation {
@@ -252,6 +255,12 @@ export const StyledHomePage = styled.div`
       width: 100%;
       height: 1.50687rem;
       font-size: 0.75rem;
+    }
+    .hello {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      gap: 0.625rem;
     }
   }
 `;

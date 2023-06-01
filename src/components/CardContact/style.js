@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import trash from "../../img/trash.svg";
 import lapis from "../../img/pencil.png";
-import fundoLi from "../../img/fundoLi.jpg";
+// import fundoLi from "../../img/fundoLi.jpg";
 
 export const StyleCardContact = styled.li`
   max-width: 18.313rem;
@@ -12,11 +12,13 @@ export const StyleCardContact = styled.li`
   align-items: center;
   justify-content: space-between;
   background-repeat: no-repeat;
-  background-image: url(${fundoLi});
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQF8mIwyPaSiMfIA3WT2EsBUkR35Wo-y33_Bw&usqp=CAU");
+  background-position: center;
+  background-size: cover;
   border-radius: 0.25rem;
 
   :hover {
-    border: 0.094rem solid #45214a;
+    border: 0.094rem solid #000000;
   }
 
   .areClient {

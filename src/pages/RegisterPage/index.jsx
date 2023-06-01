@@ -7,6 +7,7 @@ import { StyledRegisterPage } from "./style";
 import { registerSchema } from "./registerSchema";
 import logo from "../../img/logo_costumer.svg";
 import { Loading } from "../../components/Loading";
+import InputMask from "react-input-mask";
 
 export const RegisterPage = () => {
   const { loading, NewRegister, setLoading } = useContext(AuthContext);
@@ -95,8 +96,9 @@ export const RegisterPage = () => {
           <label htmlFor="phone" className="lbRegister">
             Telefone
           </label>
-          <input
+          <InputMask
             type="text"
+            mask="(99) 99999-9999"
             placeholder="Digite aqui seu telefone"
             className="iptRegister"
             {...register("phone")}
