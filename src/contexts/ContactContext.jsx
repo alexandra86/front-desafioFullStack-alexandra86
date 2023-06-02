@@ -2,6 +2,7 @@ import { createContext, useContext, useState } from "react";
 import { AuthContext } from "../contexts/AuthContext";
 import { toast } from "react-toastify";
 import { api } from "../services/axiosClient";
+import { useNavigate } from "react-router-dom";
 
 export const ContactContext = createContext({});
 
@@ -12,8 +13,12 @@ export const ContactProvider = ({ children }) => {
   const [modalIsContactsOpen, setIsContactsOpen] = useState(false);
   const [selectContact, setSelectContact] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [modalIsClientOpen, setIsClientOpen] = useState(false);
+  const [modalIsEditClientOpen, setIsEditClientOpen] = useState(false);
   const [selectClient, setSelectClient] = useState(null);
+  const [modalIsDeleteClientOpen, setIsDeleteClientOpen] = useState(false);
+  const [selectDeleteClient, setSelectDeleteClient] = useState(null);
+
+  const navigate = useNavigate();
 
   const handleModal = () => {
     setIsOpen(!modalIsOpen);
@@ -27,8 +32,13 @@ export const ContactProvider = ({ children }) => {
     setIsContactsOpen(!modalIsContactsOpen);
   };
 
-  const handleClientModal = () => {
-    setIsClientOpen(!modalIsClientOpen);
+  const handleEditClientModal = () => {
+    setIsEditClientOpen(!modalIsEditClientOpen);
+  };
+
+  const handleDeleteClientModal = (client) => {
+    setSelectDeleteClient(client);
+    setIsDeleteClientOpen(!modalIsDeleteClientOpen);
   };
 
   const RegisterContact = async (data) => {
@@ -87,8 +97,34 @@ export const ContactProvider = ({ children }) => {
       await api.patch(`/clients/${data.id}`, data);
       getClient();
 
-      setIsClientOpen(false);
+      setIsEditClientOpen(false);
       toast.success("Perfil alterado com sucesso!");
+    } catch (error) {
+      toast.error("Algo não está certo!");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const deleteToken = () => {
+    localStorage.removeItem("@TOKENCLIENT");
+    localStorage.removeItem("@TOKEN");
+  };
+
+  const loginRedirect = () => {
+    navigate("/");
+  };
+
+  const removeClient = async (id) => {
+    try {
+      setLoading(true);
+
+      await api.delete(`/clients/${id}`);
+      getClient();
+
+      toast.info("Perfil removido com sucesso!");
+      deleteToken();
+      loginRedirect();
     } catch (error) {
       toast.error("Algo não está certo!");
     } finally {
@@ -116,12 +152,20 @@ export const ContactProvider = ({ children }) => {
         handleContactsModal,
         modalIsContactsOpen,
         setIsContactsOpen,
-        modalIsClientOpen,
-        setIsClientOpen,
+        modalIsEditClientOpen,
+        setIsEditClientOpen,
         selectClient,
         setSelectClient,
         editClient,
-        handleClientModal,
+        handleEditClientModal,
+        handleDeleteClientModal,
+        modalIsDeleteClientOpen,
+        setIsDeleteClientOpen,
+        removeClient,
+        loginRedirect,
+        deleteToken,
+        selectDeleteClient,
+        setSelectDeleteClient,
       }}
     >
       {children}

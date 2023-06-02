@@ -26,7 +26,7 @@ export const registerSchema = yup.object().shape({
 
   phone: yup.string().required("Campo Obrigatório"),
 
-  image: yup.string().required("Campo Obrigatório"),
+  image: yup.string().notRequired(),
 
   gender: yup.string().required("Selecione uma opção"),
 });

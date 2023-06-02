@@ -6,14 +6,21 @@ import { StyledProfilePage } from "./style";
 import { useNavigate } from "react-router-dom";
 import { EditClientModal } from "../../components/EditClientModal";
 import { ContactContext } from "../../contexts/ContactContext";
+import { DeleteClientModal } from "../../components/DeleteClientModal";
+import perfilImagem from "../../img/perfilImage.png";
 import moment from "moment";
 import "moment/locale/pt-br";
 import "react-toastify/dist/ReactToastify.css";
 
 export const ProfilePage = () => {
   const { client, newLoading } = useContext(AuthContext);
-  const { setSelectClient, modalIsClientOpen, handleClientModal } =
-    useContext(ContactContext);
+  const {
+    setSelectClient,
+    modalIsEditClientOpen,
+    handleEditClientModal,
+    handleDeleteClientModal,
+    modalIsDeleteClientOpen,
+  } = useContext(ContactContext);
 
   const navigate = useNavigate();
 
@@ -35,14 +42,22 @@ export const ProfilePage = () => {
               Home
             </button>
           </header>
-          <img
-            src={client.client.image}
-            alt="Imagem do cliente"
-            className="imageClientProfile"
-          />
+          {!client.client.image ? (
+            <img
+              src={perfilImagem}
+              alt="Imagem do perfil"
+              className="imageClientProfile"
+            />
+          ) : (
+            <img
+              src={client.client.image}
+              alt="Imagem do cliente"
+              className="imageClientProfile"
+            />
+          )}
 
           <div className="areaClientProfile" key={client.client.id}>
-            <h2 className="NameClientProfile">Nome: {client.client.name}</h2>
+            <h2 className="NameClientProfile">{client.client.name}</h2>
             <p className="clientProfile">E-mail: {client.client.email}</p>
             <p className="clientProfile">Phone: {client.client.phone}</p>
             <p className="clientProfile">Gender: {client.client.gender}</p>
@@ -65,16 +80,23 @@ export const ProfilePage = () => {
               <button
                 className="btEditProfile"
                 onClick={() => {
-                  handleClientModal();
+                  handleEditClientModal();
                   setSelectClient(client.client);
                 }}
               >
                 Editar
               </button>
-              <button className="btDeleteProfile">Deletar</button>
+              <button
+                type="button"
+                className="btDeleteProfile"
+                onClick={() => handleDeleteClientModal()}
+              >
+                Deletar
+              </button>
             </div>
           </div>
-          {modalIsClientOpen && <EditClientModal />}
+          {modalIsEditClientOpen && <EditClientModal />}
+          {modalIsDeleteClientOpen && <DeleteClientModal />}
         </StyledProfilePage>
       )}
     </>

@@ -9,7 +9,7 @@ import { editClientSchema } from "./editClientSchema.js";
 import InputMask from "react-input-mask";
 
 export const EditClientModal = () => {
-  const { handleClientModal, editClient, loading, client } =
+  const { handleEditClientModal, editClient, loading, client } =
     useContext(ContactContext);
 
   const {
@@ -23,7 +23,9 @@ export const EditClientModal = () => {
       id: client.client.id,
       name: client.client.name,
       email: client.client.email,
+      password: client.client.password,
       phone: client.client.phone,
+      image: client.client.image,
       gender: client.client.gender,
     },
     resolver: yupResolver(editClientSchema),
@@ -40,8 +42,11 @@ export const EditClientModal = () => {
     <StyledContainerModal>
       <div className="modalContent">
         <div className="headerModal">
-          <h2 className="titleModal">Editar Cliente</h2>
-          <button onClick={() => handleClientModal()} className="btCloseModal">
+          <h2 className="titleModal">Editar Perfil</h2>
+          <button
+            onClick={() => handleEditClientModal()}
+            className="btCloseModal"
+          >
             X
           </button>
         </div>
@@ -114,7 +119,7 @@ export const EditClientModal = () => {
             <p className="areaError">{errors.gender.message}</p>
           )}
           <button type="submit" className="btRegisterModal" disabled={loading}>
-            {loading ? "Editando..." : "Editar Contato"}
+            {loading ? "Editando..." : "Editar Perfil"}
           </button>
         </form>
       </div>

@@ -9,6 +9,7 @@ import { ContactContext } from "../../contexts/ContactContext";
 import { RegisterContactModal } from "../../components/RegisterContactModal";
 import { EditContactModal } from "../../components/EditContactModal";
 import { ContactsModal } from "../../components/ContactsModal";
+import perfilImagem from "../../img/perfilImage.png";
 import "react-toastify/dist/ReactToastify.css";
 
 export const HomePage = () => {
@@ -55,11 +56,19 @@ export const HomePage = () => {
               <p className="areaWelcome">{client.client.name}</p>
             </div>
             <div className="areaImageClient">
-              <img
-                src={client.client.image}
-                alt="Imagem do cliente"
-                className="imageClient"
-              />
+              {!client.client.image ? (
+                <img
+                  src={perfilImagem}
+                  alt="Imagem do perfil"
+                  className="imageClient"
+                />
+              ) : (
+                <img
+                  src={client.client.image}
+                  alt="Imagem do cliente"
+                  className="imageClient"
+                />
+              )}
               <button className="btViewProfile" onClick={goProfilePage}>
                 {" "}
                 Ver perfil

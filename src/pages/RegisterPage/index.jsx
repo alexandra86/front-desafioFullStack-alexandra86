@@ -114,7 +114,7 @@ export const RegisterPage = () => {
             className="iptRegister"
             {...register("image")}
           />
-          {errors.image && <p className="areaError">{errors.image.message}</p>}
+          {errors?.image && <p className="areaError">{errors.image.message}</p>}
 
           <label htmlFor="gender" className="lbRegister">
             Gênero
