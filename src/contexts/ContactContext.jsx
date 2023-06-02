@@ -12,6 +12,8 @@ export const ContactProvider = ({ children }) => {
   const [modalIsContactsOpen, setIsContactsOpen] = useState(false);
   const [selectContact, setSelectContact] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [modalIsClientOpen, setIsClientOpen] = useState(false);
+  const [selectClient, setSelectClient] = useState(null);
 
   const handleModal = () => {
     setIsOpen(!modalIsOpen);
@@ -23,6 +25,10 @@ export const ContactProvider = ({ children }) => {
 
   const handleContactsModal = () => {
     setIsContactsOpen(!modalIsContactsOpen);
+  };
+
+  const handleClientModal = () => {
+    setIsClientOpen(!modalIsClientOpen);
   };
 
   const RegisterContact = async (data) => {
@@ -59,7 +65,6 @@ export const ContactProvider = ({ children }) => {
   };
 
   const editContact = async (data) => {
-    console.log(data);
     try {
       setLoading(true);
 
@@ -68,6 +73,22 @@ export const ContactProvider = ({ children }) => {
 
       setIsEditOpen(false);
       toast.success("Contato alterado com sucesso!");
+    } catch (error) {
+      toast.error("Algo não está certo!");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const editClient = async (data) => {
+    try {
+      setLoading(true);
+
+      await api.patch(`/clients/${data.id}`, data);
+      getClient();
+
+      setIsClientOpen(false);
+      toast.success("Perfil alterado com sucesso!");
     } catch (error) {
       toast.error("Algo não está certo!");
     } finally {
@@ -95,6 +116,12 @@ export const ContactProvider = ({ children }) => {
         handleContactsModal,
         modalIsContactsOpen,
         setIsContactsOpen,
+        modalIsClientOpen,
+        setIsClientOpen,
+        selectClient,
+        setSelectClient,
+        editClient,
+        handleClientModal,
       }}
     >
       {children}

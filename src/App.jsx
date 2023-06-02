@@ -5,6 +5,7 @@ import { RegisterPage } from "./pages/RegisterPage";
 import { NotFoundPage } from "./pages/NotFoundPage";
 import { HomePage } from "./pages/HomePage";
 import { ContactProvider } from "./contexts/ContactContext";
+import { ProfilePage } from "./pages/ProfilePage";
 
 const App = () => {
   return (
@@ -16,6 +17,14 @@ const App = () => {
         element={
           <ContactProvider>
             <HomePage />
+          </ContactProvider>
+        }
+      />
+      <Route
+        path="/profile"
+        element={
+          <ContactProvider>
+            <ProfilePage />
           </ContactProvider>
         }
       />

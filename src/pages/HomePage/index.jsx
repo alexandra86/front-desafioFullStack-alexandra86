@@ -29,6 +29,10 @@ export const HomePage = () => {
     localStorage.removeItem("@TOKEN");
     localStorage.removeItem("@TOKENCLIENT");
   };
+
+  const goProfilePage = () => {
+    navigate("/profile");
+  };
   return (
     <>
       {newLoading && <div>Carregando...</div>}
@@ -56,7 +60,10 @@ export const HomePage = () => {
                 alt="Imagem do cliente"
                 className="imageClient"
               />
-              <button className="btViewProfile"> Ver perfil</button>
+              <button className="btViewProfile" onClick={goProfilePage}>
+                {" "}
+                Ver perfil
+              </button>
             </div>
           </div>
 

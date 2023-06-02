@@ -26,21 +26,23 @@ export const ContactsModal = () => {
             X
           </button>
         </div>
-        <div className="handleListContacts">
+        <ul className="handleListContacts">
           {client.contacts.map((contact) => (
-            <div key={contact.id}>
-              <h2>Nome: {contact.fullName}</h2>
-              <p>E-mail: {contact.email}</p>
-              <p>Phone: {contact.phone}</p>
-              <p>Gender: {contact.gender}</p>
-              <h3>Register Date:</h3>
+            <li key={contact.id} className="liContactsModal">
               <div>
-                <p>Date: {formattedDate}</p>
-                <p>Hour: {formattedTime}</p>
+                <h2 className="infoFullNameContact">{contact.fullName}</h2>
+                <p className="infoContact">E-mail: {contact.email}</p>
+                <p className="infoContact">Phone: {contact.phone}</p>
+                <p className="infoContact">Gender: {contact.gender}</p>
+                <h3 className="titleRegisterDateContact">Register Date:</h3>
+                <div className="dateAndHour">
+                  <p className="infoContact">Date: {formattedDate}</p>
+                  <p className="infoContact">Hour: {formattedTime}</p>
+                </div>
               </div>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </StyledContainerContactsModal>
   );

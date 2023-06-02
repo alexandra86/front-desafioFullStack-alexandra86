@@ -53,9 +53,14 @@ export const StyledContainerContactsModal = styled.div`
     width: 100%;
     height: 100%;
     padding: 0.75rem 1.25rem;
-    background-color: #7fadeb;
-    line-height: 2rem;
     overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    background-repeat: no-repeat;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxZqC15jSqj_NaOkgPzwSFGZ_S1ERIk-hBAA&usqp=CAU");
+    background-position: center;
+    background-size: cover;
   }
 
   .handleListContacts::-webkit-scrollbar {
@@ -68,6 +73,46 @@ export const StyledContainerContactsModal = styled.div`
 
   .handleListContacts::-webkit-scrollbar-thumb:hover {
     background-color: #051d40;
+  }
+
+  .liContactsModal {
+    list-style: none;
+    line-height: 1.375rem;
+    border-bottom: 0.063rem dashed #000000;
+  }
+
+  .infoFullNameContact {
+    margin-top: 0.563rem;
+    margin-bottom: 0.313rem;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 1.125rem;
+    color: #000000;
+  }
+
+  .infoContact {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 0.875rem;
+    color: #000000;
+  }
+
+  .titleRegisterDateContact {
+    text-align: center;
+    margin-top: 0.5rem;
+    margin-bottom: 0.438rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    color: #000000;
+  }
+
+  .dateAndHour {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
   }
 
   @media (max-width: 43.75rem) {
