@@ -20,6 +20,7 @@ O projeto representa uma aplicação onde um cliente pode cadastrar, editar e de
 
 <h2 font-family="pattaya">Requisitos técnicos:</h2><br>
 
+- a aplicação utiliza api rodando localmente na máquina do usuário. É preciso clonar este <a href="https://github.com/alexandra86/back-desafioFullStack-alexandra86" font-family="robotto" font-size="16px">repositório</a>, para visualizar suas funcionalidades;
 - pacote de instalação do app com yarn pelo vite;
 - utilizados contextos, para os estados, funções e suas props;
 - os modais foram criados com o uso do createPortal (react-dom);
