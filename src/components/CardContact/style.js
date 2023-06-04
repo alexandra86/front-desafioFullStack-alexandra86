@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import trash from "../../img/trash.svg";
 import lapis from "../../img/pencil.png";
-// import fundoLi from "../../img/fundoLi.jpg";
 
 export const StyleCardContact = styled.li`
   max-width: 18.313rem;
@@ -16,6 +15,8 @@ export const StyleCardContact = styled.li`
   background-position: center;
   background-size: cover;
   border-radius: 0.25rem;
+  animation: card 1.5s ease-in;
+  transform: 1.5s ease-in;
 
   :hover {
     border: 0.094rem solid #000000;
@@ -84,6 +85,17 @@ export const StyleCardContact = styled.li`
     padding: 0.625rem 0.3125rem;
     .areabuttons {
       gap: 0.1875rem;
+    }
+  }
+
+  @keyframes card {
+    from {
+      opacity: 0;
+      transform: translateX(-70%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0%);
     }
   }
 `;

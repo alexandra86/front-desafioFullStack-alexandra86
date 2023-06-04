@@ -16,6 +16,8 @@ export const StyledContainerModal = styled.div`
     width: 100%;
     border-radius: 0.25rem;
     background-color: #051d40;
+    animation: registerAnimation 1.5s ease-in;
+    transform: 1.5s ease-in;
   }
   .headerModal {
     max-width: 23.0625rem;
@@ -121,6 +123,17 @@ export const StyledContainerModal = styled.div`
   @media (max-width: 43.75rem) {
     .modalContent {
       width: 83%;
+    }
+  }
+
+  @keyframes registerAnimation {
+    from {
+      opacity: 0;
+      transform: translateY(-70%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0%);
     }
   }
 `;

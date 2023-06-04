@@ -101,7 +101,7 @@ export const RegisterContactModal = () => {
             <p className="areaError">{errors.gender.message}</p>
           )}
           <button type="submit" className="btRegisterModal" disabled={loading}>
-            {loading ? "Cadastrando..." : "Cadastrar Contato"}
+            {loading ? "Cadastrando..." : "Cadastrar"}
           </button>
         </form>
       </div>

@@ -23,7 +23,6 @@ export const EditClientModal = () => {
       id: client.client.id,
       name: client.client.name,
       email: client.client.email,
-      password: client.client.password,
       phone: client.client.phone,
       image: client.client.image,
       gender: client.client.gender,

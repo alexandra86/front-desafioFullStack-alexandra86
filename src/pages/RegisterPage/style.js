@@ -41,7 +41,7 @@ export const StyledRegisterPage = styled.div`
     margin-bottom: 0.625rem;
     max-width: 31.25rem;
     width: 100%;
-    height: 48.9375rem;
+    height: 45.9375rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -88,6 +88,7 @@ export const StyledRegisterPage = styled.div`
   .formRegister {
     max-width: 28.25rem;
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
   }
@@ -103,7 +104,7 @@ export const StyledRegisterPage = styled.div`
   .iptRegister {
     max-width: 28.25rem;
     width: 100%;
-    height: 4.375rem;
+    height: 3.813rem;
     margin-bottom: 0.9375rem;
     padding: 1.25rem 0.9375rem;
     margin-bottom: 0.3125rem;

@@ -16,6 +16,8 @@ export const StyledContainerDeleteModal = styled.div`
     width: 100%;
     border-radius: 0.25rem;
     background-color: #051d40;
+    animation: deleteAnimation 1.5s ease-in;
+    transform: 1.5s ease-in;
   }
   .headerModal {
     max-width: 31.25rem;
@@ -134,6 +136,17 @@ export const StyledContainerDeleteModal = styled.div`
 
     .areaDeleteInfo {
       height: 18.75rem;
+    }
+  }
+
+  @keyframes deleteAnimation {
+    from {
+      opacity: 0;
+      transform: translateY(-70%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0%);
     }
   }
 `;

@@ -26,23 +26,31 @@ export const ContactsModal = () => {
             X
           </button>
         </div>
-        <ul className="handleListContacts">
-          {client.contacts.map((contact) => (
-            <li key={contact.id} className="liContactsModal">
-              <div>
-                <h2 className="infoFullNameContact">{contact.fullName}</h2>
-                <p className="infoContact">E-mail: {contact.email}</p>
-                <p className="infoContact">Phone: {contact.phone}</p>
-                <p className="infoContact">Gender: {contact.gender}</p>
-                <h3 className="titleRegisterDateContact">Register Date:</h3>
-                <div className="dateAndHour">
-                  <p className="infoContact">Date: {formattedDate}</p>
-                  <p className="infoContact">Hour: {formattedTime}</p>
+        {client.contacts && client.contacts.length > 0 ? (
+          <ul className="handleListContacts">
+            {client.contacts.map((contact) => (
+              <li key={contact.id} className="liContactsModal">
+                <div>
+                  <h2 className="infoFullNameContact">{contact.fullName}</h2>
+                  <p className="infoContact">E-mail: {contact.email}</p>
+                  <p className="infoContact">Phone: {contact.phone}</p>
+                  <p className="infoContact">Gender: {contact.gender}</p>
+                  <h3 className="titleRegisterDateContact">Register Date:</h3>
+                  <div className="dateAndHour">
+                    <p className="infoContact">Date: {formattedDate}</p>
+                    <p className="infoContact">Hour: {formattedTime}</p>
+                  </div>
                 </div>
-              </div>
-            </li>
-          ))}
-        </ul>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <div className="areaNoContactModal">
+            <h1 className="freseNoContactModal">
+              Você não ainda possui contatos cadastrados.
+            </h1>
+          </div>
+        )}
       </div>
     </StyledContainerContactsModal>
   );

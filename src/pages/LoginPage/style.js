@@ -52,7 +52,7 @@ export const StyledLoginPage = styled.div`
   .iptLogin {
     max-width: 28.25rem;
     width: 100%;
-    height: 4.375rem;
+    height: 3.813rem;
     margin-bottom: 0.9375rem;
     padding: 1.25rem 0.9375rem;
     margin-bottom: 0.3125rem;
