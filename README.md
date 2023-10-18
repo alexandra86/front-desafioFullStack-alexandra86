@@ -1,4 +1,4 @@
-<h1 align="center" font-family="pattaya">Costumer Contact</h1><br>
+<h1 align="center" font-family="pattaya">Costumer Contacts</h1><br>
 
 <h2 font-family="pattaya">Tecnologias utilizadas</h2>
 <div style="display: inline_block"><br>
